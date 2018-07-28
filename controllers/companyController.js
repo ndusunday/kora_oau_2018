@@ -7,12 +7,28 @@ var Admin = require('../models/admin');
 exports.company_index = (req, res)=>{
     // res.send('NOt IMPLEMENTED: Company welcome page');
     res.render("dashboard", {title: "Company Login"});
-}
+};
+exports.company_profile = (req, res)=>{
+    // res.send('NOt IMPLEMENTED: Company welcome page');
+    res.render("profile", {title: "KS | Profile"});
+};
+exports.company_settings = (req, res)=>{
+    // res.send('NOt IMPLEMENTED: Company welcome page');
+    res.render("settings", {title: "KS | Settings"});
+};
+
+exports.company_login = (req, res)=>{
+    // res.send('NOt IMPLEMENTED: Company welcome page');
+    res.render("login", {title: "KS | Settings"});
+};
+
+
 
 // Display list of all users- For the COMPANY admins
 exports.company_user_list = (req, res)=> {
-    res.send('NOt IMPLEMENTED: user List for Company');
-}
+    // res.send('NOt IMPLEMENTED: user List for Company');
+    res.render("user-data", {title: "KS | Settings"});
+};
 
 // Display detail page for a specific user - Also for the COMPANY admins
 exports.company_user_detail = (req, res)=> {
