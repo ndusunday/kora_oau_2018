@@ -4,6 +4,8 @@ var Token = require('../models/token');
 var Company = require('../models/company');
 var Admin = require('../models/admin');
 
+var async = require('async');
+
 exports.company_index = (req, res)=>{
     // res.send('NOt IMPLEMENTED: Company welcome page');
     res.render("dashboard", {title: "Company Login"});
@@ -27,7 +29,20 @@ exports.company_login = (req, res)=>{
 // Display list of all users- For the COMPANY admins
 exports.company_user_list = (req, res)=> {
     // res.send('NOt IMPLEMENTED: user List for Company');
-    res.render("user-data", {title: "KS | Settings"});
+    async.parallel({
+        user_count: (callback)=>{
+            User.count({},callback)
+        },
+        users: (callback)=>{
+            User.find(callback)
+        }
+    }, (err, results)=>{
+        if (err) console.log('Error occurred: '+err);
+
+        console.log(results);
+        // console.log('Done pulling: '+results);
+        res.render("user-data", {title: "KS | Customers", data: results});
+    }); 
 };
 
 // Display detail page for a specific user - Also for the COMPANY admins

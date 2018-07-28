@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>KS | User Data</title>
+    <title>KS | {{title}}</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
@@ -142,6 +142,17 @@
 
                         <!-- Table body -->
                         <tbody>
+                        <p> {{data.users}} </p>
+                        {{#data.users}}
+                            <tr>
+                                <th scope="row">{{i++}}</th>
+                                <td>username</td>
+                                <td>5804</td>
+                                <td>token_value</td>
+                                <td><button class="btn btn-danger">Delete user</button></td>
+                                <td><button class="btn btn-warning">Reward</button></td>
+                            </tr>
+                        {{/data.users}}
                         <tr>
                             <th scope="row">1</th>
                             <td>User1232</td>
