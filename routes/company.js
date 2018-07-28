@@ -14,7 +14,16 @@ var token_controller = require('../controllers/tokenController');
 router.get('/', company_controller.company_index);
 
 // Get a list of users 
-router.get('/users', company_controller.company_user_list);
+router.get('/user-data', company_controller.company_user_list);
+
+//get the company admin profile
+router.get('/profile', company_controller.company_profile);
+
+//get the company admin settings
+router.get('/settings', company_controller.company_settings);
+
+// get the comapany admin login
+router.get('/login', company_controller.company_login);
 
 // GET request for creating a user
 router.get('/user/create', company_controller.company_user_add_get);
