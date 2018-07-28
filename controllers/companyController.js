@@ -5,7 +5,8 @@ var Company = require('../models/company');
 var Admin = require('../models/admin');
 
 exports.company_index = (req, res)=>{
-    res.send('NOt IMPLEMENTED: Company welcome page');
+    // res.send('NOt IMPLEMENTED: Company welcome page');
+    res.render("dashboard", {title: "Company Login"});
 }
 
 // Display list of all users- For the COMPANY admins

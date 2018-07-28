@@ -3,7 +3,8 @@ var User = require('../models/user');
 var Token = require('../models/token');
 
 exports.index = (req, res)=>{
-    res.send('Not implemented: villey homepage');
+    // res.send('Not implemented: villey homepage');
+    res.render('login', {title: "User Authentication"});
 }
 
 // Display list of all users- For the project admins
