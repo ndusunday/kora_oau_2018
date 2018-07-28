@@ -28,4 +28,27 @@ app.use('/', indexRouter);
 app.use('/villey', villeyRouter);
 app.use('/company', companyRouter);
 
+// Get the user model
+var User = require('./models/user');
+// Import the mongoose module
+var mongoose = require('mongoose');
+// nev = require('email-verification')(mongoose);
+
+//Set up default mongoose connection
+// mongodb://<dbuser>:<dbpassword>@ds153380.mlab.com:53380/grozzonlinedb
+// var mongoDB = 'mongodb://grozzonlinedb:grozz2sunday@ds153380.mlab.com:53380/grozzonlinedb';
+var mongoDB = 'mongodb://<team_ksdb>:<dbpassword>@ds257551.mlab.com:57551/team_ksdb';
+// var mongoDB = 'mongodb://localhost:27017/grozzonline'
+
+mongoose.connect(mongoDB);
+
+// Get Mongoose to use the global promise library
+mongoose.Promise = global.Promise;
+// Get the default connection
+var db = mongoose.connection;
+
+// Bind connection to error event - notification of error
+db.on('error', console.error.bind(console, 'MongoDB connection failed, an error occured!!!'));
+// // db.on('success', console.status.bind(console, "MongoDD status"));
+
 module.exports = app;
