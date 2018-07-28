@@ -73,6 +73,7 @@ exports.add_token_to_user = [
 ]
 
 exports.login_get = (req, res,next)=>{
+    
     res.send('NOT IMPLEMENTED: Company admin login GET');
 }
 exports.login_post = (req, res, next)=>{

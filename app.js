@@ -37,7 +37,7 @@ var mongoose = require('mongoose');
 //Set up default mongoose connection
 // mongodb://<dbuser>:<dbpassword>@ds153380.mlab.com:53380/grozzonlinedb
 // var mongoDB = 'mongodb://grozzonlinedb:grozz2sunday@ds153380.mlab.com:53380/grozzonlinedb';
-var mongoDB = 'mongodb://<team_ksdb>:<dbpassword>@ds257551.mlab.com:57551/team_ksdb';
+var mongoDB = 'mongodb://team_ksdb:team_ksdb1@ds257551.mlab.com:57551/team_ksdb';
 // var mongoDB = 'mongodb://localhost:27017/grozzonline'
 
 mongoose.connect(mongoDB);

@@ -12,7 +12,7 @@ var TokenSchema = new Schema(
         description: {type: String},
         token_avatar: [{type: String}],
         token_value: {type: Number},
-        owner: {type: Schema.ObjectId, ref: 'User'},
+        owner: {type: Schema.ObjectId, ref: 'Company'},
         // category: [{type: Schema.ObjectId, ref: 'TokenCategory'}],
         date_created: {type: Date, default: Date.now()},
         date_deleted: {type: Date, default:Date.now()}
